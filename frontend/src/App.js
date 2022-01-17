@@ -1,8 +1,14 @@
+import 'antd/dist/antd.css';
+
+import GlobalStyle from './styles/global';
+import { Container, Card } from './styles';
+
 function App() {
   return (
-    <div className="App">
-      
-    </div>
+    <Container>
+      <GlobalStyle />
+      <Card />
+    </Container>
   );
 }
 
