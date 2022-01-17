@@ -5,7 +5,8 @@
   "main": "loader.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon loader.js"
+    "start": "nodemon loader.js",
+    "sync": "node ./src/config/sync.js"
   },
   "keywords": [],
   "author": "",
