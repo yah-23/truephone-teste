@@ -19,10 +19,10 @@ const Home = () => {
   };
 
   return (
-    <div>
+    <div style={{maxWidth: '490px', margin: 'auto'}}>
       <Title1>Verifique a validade de uma lista de mensagens 👍</Title1>
       <Upload {...props} showUploadList={false} >
-          <Button>Selecionar Lista</Button>
+          <Button className='violet-bg'>Selecionar Lista</Button>
       </Upload>
       <Title3>Selecione um arquivo CSV para iniciar a verificação de uma lista com números e mensagens de SMS.</Title3>
       <Text>Use nosso <Underlined>modelo</Underlined> de arquivo se você tem alguma dúvida.</Text>

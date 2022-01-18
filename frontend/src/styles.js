@@ -5,6 +5,7 @@ export const Container = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
+    padding-top: 120px;
 `
 
 export const Card = styled.div`
@@ -22,20 +23,30 @@ export const Card = styled.div`
 `
 
 export const Button = styled.button`
-    background-color: #3D3ADA;
-    color: #fff;
     display: inline-block;
-    padding: 1rem 2rem;
-    border: 1px solid;
+    padding: 10px 25px;
     border-radius: 5px;
     text-align: center;
     font-weight: bold;
-    font-size: 18px;
+    font-size: 16px;
     cursor: pointer;
     transition: 0.2s;
     overflow: hidden;
     line-height: 1.3;
-    margin: 15px 0;
+    margin: 10px;
+
+    &.gray-border {
+        background-color: #fff;
+        color: #747474;
+        border: 2px solid #747474;
+    }
+
+    &.violet-bg{
+        background-color: #3D3ADA;
+        color: #fff;
+        border: 2px solid #3D3ADA;
+        padding: 10px 20px;
+    }
 `
 
 export const Title1 = styled.h1`
@@ -58,4 +69,7 @@ export const Underlined = styled.span`
     cursor: default;
     color: #3D3ADA;
     text-decoration: underline #3D3ADA;
+`
+export const GreenHighlight = styled.span`
+    color: #0cf000;
 `
