@@ -21,12 +21,6 @@ export const Card = styled.div`
     align-items: center;
 `
 
-export const Content = styled.div `
-    width: 70%;
-    text-align: center;
-    margin-top: 20px;
-`
-
 export const Button = styled.button`
     background-color: #3D3ADA;
     color: #fff;
