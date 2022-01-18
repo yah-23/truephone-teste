@@ -1,4 +1,5 @@
 import 'antd/dist/antd.css';
+import { UploadProvider } from './context'
 
 import GlobalStyle from './styles/global';
 import { Container, Card, Content } from './styles';
@@ -10,15 +11,17 @@ import Home from './views/Home';
 function App() {
   
   return (
-    <Container>
-      <Header />
-      <Card>
-        <Content>
-          <Home />
-        </Content>
-      </Card>
-      <GlobalStyle />
-    </Container>
+    <UploadProvider>
+      <Container>
+        <Header />
+        <Card>
+          <Content>
+            <Home />
+          </Content>
+        </Card>
+        <GlobalStyle />
+      </Container>
+    </UploadProvider>
   );
 }
 
