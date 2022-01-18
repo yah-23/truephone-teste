@@ -52,17 +52,22 @@ export const Button = styled.button`
 export const Title1 = styled.h1`
     line-height: 1.1;
     font-weight: bold;
+
+    &.violet-title{
+        color: #3D3ADA;
+        margin-bottom: 30px;
+    }
 `
 
 export const Title3 = styled.h3`
     line-height: 1.1;
     font-weight: 600;
-    margin-top: 10px;
+    margin: 20px 0;
 `
 
 export const Text = styled.p`
     line-height: 1.1;
-    margin-top: 20px;
+    margin-top: 30px;
 `
 
 export const Underlined = styled.span`

@@ -3,11 +3,12 @@ import { ContentBox } from './styles';
 import Home from '../../views/Home';
 import List from '../../views/List';
 import Loading from '../Loading';
+import Confirm from '../../views/Confirm';
 
 import { useUploadContext } from '../../context'
 
 const Content = () => {
-    const { isUploading, showHome } = useUploadContext();
+    const { isUploading, showHome, showConfirm } = useUploadContext();
 
     return (
         <ContentBox>
@@ -16,7 +17,10 @@ const Content = () => {
             : 
                 <>
                     { isUploading ?
-                        <Loading /> : <List />
+                        <Loading /> : 
+                        <>
+                            {showConfirm ? <Confirm /> : <List />}
+                        </>
                     }    
                 </>
             }
