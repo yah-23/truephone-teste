@@ -1,5 +1,7 @@
 const server = require('./src/config/server');
 const dbConnection = require('./src/config/dbConnection');
+require('./src/routes/WizardRoutes')(server);
+
 const _PORT = process.env._PORT;
 
 server.listen(_PORT, async () => {
