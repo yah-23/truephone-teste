@@ -12,4 +12,5 @@ module.exports = new Sequelize(_DATABASE, _USER, _PASSWORD, {
     max: 10,
   },
   port: 3306,
+  logging: false
 });

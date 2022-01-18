@@ -2,9 +2,15 @@ const Arquivo = require('../models/Arquivo');
 const Mensagem = require('../models/Mensagem');
 
 Arquivo.hasMany(Mensagem, {
-    foreignKey: 'codigoArquivo',
+    foreignKey: {
+        name: 'codigoArquivo',
+        allowNull: false
+    },
 });
 
 Mensagem.belongsTo(Arquivo, {
-    foreignKey: 'codigoArquivo'
+    foreignKey: {
+        name: 'codigoArquivo',
+        allowNull: false
+    }
 })

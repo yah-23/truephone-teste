@@ -20,6 +20,10 @@ const Mensagem = dbConnection.define(
         valido: {
             type: DataTypes.BOOLEAN,
             allowNull: false
+        },
+        codigoArquivo: {
+            type: DataTypes.INTEGER,
+            allowNull: false,
         }
     }, {
         table: 'mensagens'

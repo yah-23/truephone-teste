@@ -4,6 +4,8 @@ const csv = require('fast-csv');
 
 const dbConnection = require('../config/dbConnection');
 
+const Arquivo = require('../models/Arquivo')
+const Mensagem = require('../models/Mensagem')
 
 exports.validation = async(request, response) => {
     try {
@@ -20,6 +22,26 @@ exports.validation = async(request, response) => {
                 fs.unlinkSync(file.path)
                 response.status(200).send({ data: rows, file })
             });
+    } catch (error) {
+        response.status(500).send({error})
+    }
+}
+
+exports.insertDb = async(request, response) => {
+    try {
+        const {data, file} = request.body
+        
+        const dataCreated = await Arquivo.create({ nomeArquivo: file['filename'], data: new Date() })
+        const arquivo = dataCreated.get();
+        const { id } = arquivo;
+        
+        const mappedData = data.map(element => {
+            return { ...element, codigoArquivo: id }
+        })
+
+        await Mensagem.bulkCreate(mappedData)
+        
+        response.status(200).send({message: 'Dados salvos com sucesso!'})
     } catch (error) {
         response.status(500).send({error})
     }

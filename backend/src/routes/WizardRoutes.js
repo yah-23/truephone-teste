@@ -13,11 +13,12 @@ const storage = multer.diskStorage({
 
 const upload = multer({ storage: storage })
 
-const controller = require('../controllers/WizardController');
+const Controller = require('../controllers/WizardController');
 
 
 
-router.post("/validation", upload.single('file'), controller.validation);
+router.post("/validation", upload.single('file'), Controller.validation);
+router.post("/insert", Controller.insertDb);
 
 module.exports = function (server) {
   server.use("/api", router);
