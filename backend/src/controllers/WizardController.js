@@ -18,7 +18,7 @@ exports.validation = async(request, response) => {
             .on('data-invalid', (row) => rows.push({ telefone: row[0], mensagem: row[1], valido: false }))
             .on('end', () => {
                 fs.unlinkSync(file.path)
-                response.status(200).send({ data: rows })
+                response.status(200).send({ data: rows, file })
             });
     } catch (error) {
         response.status(500).send({error})
