@@ -6,7 +6,7 @@ import { CheckOutlined,   CloseOutlined } from '@ant-design/icons';
 import { useUploadContext } from '../../context'
 
 const List = () => {
-    const { backToStart, validatedData, totalValid } = useUploadContext();
+    const { backToStart, validatedData, totalValid, insertDb } = useUploadContext();
     
     return(
         <div>
@@ -18,7 +18,7 @@ const List = () => {
                 <TableComponent data={validatedData} />
                 <ButtonBox>
                     <Button className='gray-border' onClick={() => backToStart()}>Cancelar <CloseOutlined /></Button>
-                    <Button className='violet-bg'>Salvar Lista <CheckOutlined /></Button>
+                    <Button className='violet-bg' onClick={() => insertDb()}>Salvar Lista <CheckOutlined /></Button>
                 </ButtonBox>
             </> : <></>}
         </div>

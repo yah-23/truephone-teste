@@ -69,6 +69,10 @@ export const Underlined = styled.span`
     cursor: default;
     color: #3D3ADA;
     text-decoration: underline #3D3ADA;
+
+    &.link {
+        cursor: pointer;
+    }
 `
 export const GreenHighlight = styled.span`
     color: #0cf000;
